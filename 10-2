@@ -1,0 +1,36 @@
+/*
+ Name: Quinton Fesq
+ Date: November 2nd 2023
+ File: 10-2
+ 
+ Desription: Write the function int count_words(string str) that returns a count of all words in the string str. Words are
+ separated by spaces. For example, count_words("Mary had a little lamb") should return 5. Your function must
+ work correctly if there are multiple spaces between words
+ */
+
+#include <iostream>
+#include <sstream>
+
+int count_words(const std::string& str) {
+    std::istringstream stream(str);
+    std::string word;
+    int count = 0;
+
+    while (stream >> word) {
+        count++;
+    }
+
+    return count;
+}
+
+int main() {
+    std::cout << "Enter a sentence: ";
+    std::string input;
+    std::getline(std::cin, input);
+
+    int result = count_words(input);
+    std::cout << "Number of words: " << result << std::endl;
+
+    return 0;
+}
+
